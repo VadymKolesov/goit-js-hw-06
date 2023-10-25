@@ -14,9 +14,14 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
+gallery.style.listStyle = "none";
+gallery.style.padding = "0";
+gallery.style.display = "flex";
 const galleryItems = [];
 
 images.forEach((item) => {
-  const itemGallery = `<li><img ${item} /></li>`;
-  console.log(itemGallery);
+    const itemGallery = `<li "width: calc(100% / 3); display: flex;"><img src="${item.url}" alt="${item.alt}" style="width: 100%;"/></li>`;
+    galleryItems.push(itemGallery);
 });
+
+gallery.insertAdjacentHTML("afterbegin", galleryItems);
