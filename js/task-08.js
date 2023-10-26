@@ -12,6 +12,7 @@ const checkForm = (event) => {
   } else {
     console.log(user);
   }
+  event.target.reset();
 };
 
 form.addEventListener("submit", checkForm);
